@@ -40,17 +40,32 @@ team_details = {
     "Institution": "VIDYA ACADEMY OF SCIENCE AND TECHNOLOGY",
     "Instagram": "https://www.instagram.com/_power_house08"
 }
-
 team_members = [
-    {"name": "Godwin C Baiju", "role": "Captain of House", "image": "images/godwin.png", "desc": "A passionate mechanical engineering student with strong leadership skills and a drive for innovation."},
-    {"name": "Vishnudev M S", "role": "Vice Captain", "image": "images/vishnu.png", "desc": "A dedicated mechanical engineering student focused on teamwork, discipline, and continuous improvement."},
-    {"name": "Vinayak", "role": "Designer", "image": "images/vinayak.png", "desc": "A creative mechanical engineering student with a strong interest in design, visualization, and innovation."},
-    {"name": "Goutham K V", "role": "Tester", "image": "images/goutham.png", "desc": "A detail-oriented mechanical engineering student skilled in analysis, testing, and quality assurance."},
-    {"name": "Rohith K R", "role": "Tester", "image": "images/rohith.png", "desc": "A motivated mechanical engineering student with a passion for problem-solving and technical excellence."},
-    {"name": "Athul T Santhosh", "role": "Tester", "image": "images/athul.png", "desc": "An enthusiastic mechanical engineering student committed to learning, teamwork, and innovation."},
-    {"name": "Arun E Satheesh", "role": "Tester", "image": "images/arun.png", "desc": "A focused mechanical engineering student with strong analytical skills and a hands-on approach."},
-    {"name": "Devarjun", "role": "Tester", "image": "images/devarjun.png", "desc": "A hardworking mechanical engineering student passionate about engineering concepts and practical applications."}
+    {"name": "Godwin C Baiju", "role": "Captain of House", "image": "images/godwin.png",
+     "desc": "A passionate mechanical engineering student with strong leadership skills and a drive for innovation."},
+
+    {"name": "Vishnudev M S", "role": "Vice Captain", "image": "images/vishnu.png",
+     "desc": "A dedicated mechanical engineering student focused on teamwork, discipline, and continuous improvement."},
+
+    {"name": "Vinayak", "role": "Designer", "image": "images/vinayak.png",
+     "desc": "A creative mechanical engineering student with a strong interest in design, visualization, and innovation."},
+
+    {"name": "Goutham K V", "role": "Tester", "image": "images/goutham.png",
+     "desc": "A detail-oriented mechanical engineering student skilled in analysis, testing, and quality assurance."},
+
+    {"name": "Rohith K R", "role": "Tester", "image": "images/rohith.png",
+     "desc": "A motivated mechanical engineering student with a passion for problem-solving and technical excellence."},
+
+    {"name": "Athul T Santhosh", "role": "Tester", "image": "images/athul.png",
+     "desc": "An enthusiastic mechanical engineering student committed to learning, teamwork, and innovation."},
+
+    {"name": "Arun E Satheesh", "role": "Tester", "image": "images/arun.png",
+     "desc": "A focused mechanical engineering student with strong analytical skills and a hands-on approach."},
+
+    {"name": "Devarjun", "role": "Tester", "image": "images/devarjun.png",
+     "desc": "A hardworking mechanical engineering student passionate about engineering concepts and practical applications."}
 ]
+
 
 # Sort team members to maintain consistent order everywhere
 team_members = sorted(team_members, key=lambda x: x['name'])
