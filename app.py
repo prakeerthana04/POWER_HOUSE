@@ -104,7 +104,7 @@ elif page == "Team Members":
         with c2:
             st.markdown(f"### {member['name']}")
             st.markdown(f"**Role:** {member['role']}**")
-            st.write("Dedicated team member with leadership, innovation, and collaborative excellence.")
+            st.write("A passionate mechanical engineering student driven by innovation, teamwork, and hands-on problem solving🔥..")
 
         st.markdown("---")
 
@@ -146,4 +146,4 @@ elif page == "Team Moments":
 
 # ----------------- FOOTER -----------------
 st.markdown("<hr>", unsafe_allow_html=True)
-st.markdown("<center>⚡ POWER HOUSE CREW | Built with Streamlit ⚡</center>", unsafe_allow_html=True)
+st.markdown("<center>⚡ POWER HOUSE CREW ⚡</center>", unsafe_allow_html=True)
