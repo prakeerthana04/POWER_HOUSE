@@ -42,6 +42,19 @@ team_details = {
 }
 
 team_members = [
+    {"name": "Godwin C Baiju", "role": "Captain of House", "image": "images/godwin.png", "desc": "A passionate mechanical engineering student with strong leadership skills and a drive for innovation."},
+    {"name": "Vishnudev M S", "role": "Vice Captain", "image": "images/vishnu.png", "desc": "A dedicated mechanical engineering student focused on teamwork, discipline, and continuous improvement."},
+    {"name": "Vinayak", "role": "Designer", "image": "images/vinayak.png", "desc": "A creative mechanical engineering student with a strong interest in design, visualization, and innovation."},
+    {"name": "Goutham K V", "role": "Tester", "image": "images/goutham.png", "desc": "A detail-oriented mechanical engineering student skilled in analysis, testing, and quality assurance."},
+    {"name": "Rohith K R", "role": "Tester", "image": "images/rohith.png", "desc": "A motivated mechanical engineering student with a passion for problem-solving and technical excellence."},
+    {"name": "Athul T Santhosh", "role": "Tester", "image": "images/athul.png", "desc": "An enthusiastic mechanical engineering student committed to learning, teamwork, and innovation."},
+    {"name": "Arun E Satheesh", "role": "Tester", "image": "images/arun.png", "desc": "A focused mechanical engineering student with strong analytical skills and a hands-on approach."},
+    {"name": "Devarjun", "role": "Tester", "image": "images/devarjun.png", "desc": "A hardworking mechanical engineering student passionate about engineering concepts and practical applications."}
+]
+
+# Sort team members to maintain consistent order everywhere
+team_members = sorted(team_members, key=lambda x: x['name'])
+
     {"name": "Godwin C Baiju", "role": "Captain of House", "image": "images/godwin.png"},
     {"name": "Vishnudev M S", "role": "Vice Captain", "image": "images/vishnu.png"},
     {"name": "Vinayak", "role": "Designer", "image": "images/vinayak.png"},
@@ -87,6 +100,7 @@ if page == "Home":
                 st.image(member['image'], width=130)
             st.markdown(f"**{member['name']}**")
             st.caption(member['role'])
+            st.write(member['desc'])
 
 # ----------------- TEAM MEMBERS PAGE -----------------
 elif page == "Team Members":
@@ -104,7 +118,7 @@ elif page == "Team Members":
         with c2:
             st.markdown(f"### {member['name']}")
             st.markdown(f"**Role:** {member['role']}**")
-            st.write("A passionate mechanical engineering student driven by innovation, teamwork, and hands-on problem solving🔥..")
+            st.write(member['desc'])
 
         st.markdown("---")
 
@@ -146,4 +160,4 @@ elif page == "Team Moments":
 
 # ----------------- FOOTER -----------------
 st.markdown("<hr>", unsafe_allow_html=True)
-st.markdown("<center>⚡ POWER HOUSE CREW ⚡</center>", unsafe_allow_html=True)
+st.markdown("<center>⚡ POWER HOUSE CREW | Built with Streamlit ⚡</center>", unsafe_allow_html=True)
