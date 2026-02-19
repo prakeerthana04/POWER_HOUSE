@@ -25,14 +25,14 @@ team_details = {
 }
 
 team_members = [
-    {"name": "Godwin C Baiju", "role": "Captain of House", "image": "godwin.jpg"},
-    {"name": "Vishnudev M S", "role": "Vice Captain", "image": "vishnu.jpg"},
-    {"name": "Vinayak", "role": "Designer", "image": "vinayak.jpg"},
-    {"name": "Goutham K V", "role": "Tester", "image": "goutham.jpg"},
-    {"name": "Rohith K R", "role": "Tester", "image": "rohith.jpg"},
-    {"name": "Athul T Santhosh", "role": "Tester", "image": "athul.jpg"},
-    {"name": "Arun E Satheesh", "role": "Tester", "image": "arun.jpg"},
-    {"name": "Devarjun", "role": "Tester", "image": "devarjun.jpg"}
+    {"name": "Godwin C Baiju", "role": "Captain of House", "image": "godwin.png"},
+    {"name": "Vishnudev M S", "role": "Vice Captain", "image": "vishnu.png"},
+    {"name": "Vinayak", "role": "Designer", "image": "vinayak.png"},
+    {"name": "Goutham K V", "role": "Tester", "image": "goutham.png"},
+    {"name": "Rohith K R", "role": "Tester", "image": "rohith.png"},
+    {"name": "Athul T Santhosh", "role": "Tester", "image": "athul.png"},
+    {"name": "Arun E Satheesh", "role": "Tester", "image": "arun.png"},
+    {"name": "Devarjun", "role": "Tester", "image": "devarjun.png"}
 ]
 
 # ----------------- HOME PAGE -----------------
