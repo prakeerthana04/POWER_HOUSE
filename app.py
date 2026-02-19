@@ -18,18 +18,21 @@ st.title("🌟 Our Amazing Team 🌟")
 
 # ----------------- TEAM DATA -----------------
 team_details = {
-    "Team Name": "Your Team Name",
-    "Department": "Artificial Intelligence & Machine Learning",
-    "Institution": "Your College Name",
-    "Project": "Your Project Name",
-    "Guide": "Guide Name"
+    "Team Name": "POWER HOUSE",
+    "Department": "MECHANICAL ENGINEERING",
+    "Institution": "VIDYA ACADEMY OF SCIENCE AND TECNOLOGY",
+    "Instagram Id": "https://www.instagram.com/_power_house08?igsh=Y295bWJxOWV5ajFv"
 }
 
 team_members = [
-    {"name": "Member 1", "role": "Team Leader", "image": "member1.jpg"},
-    {"name": "Member 2", "role": "Developer", "image": "member2.jpg"},
-    {"name": "Member 3", "role": "Designer", "image": "member3.jpg"},
-    {"name": "Member 4", "role": "Tester", "image": "member4.jpg"}
+    {"name": "Godwin C Baiju", "role": "Captain of House", "image": "godwin.jpg"},
+    {"name": "Vishnudev M S", "role": "Vice Captain", "image": "vishnu.jpg"},
+    {"name": "Vinayak", "role": "Designer", "image": "vinayak.jpg"},
+    {"name": "Goutham K V", "role": "Tester", "image": "goutham.jpg"},
+    {"name": "Rohith K R", "role": "Tester", "image": "rohith.jpg"},
+    {"name": "Athul T Santhosh", "role": "Tester", "image": "athul.jpg"},
+    {"name": "Arun E Satheesh", "role": "Tester", "image": "arun.jpg"},
+    {"name": "Devarjun", "role": "Tester", "image": "devarjun.jpg"}
 ]
 
 # ----------------- HOME PAGE -----------------
@@ -89,4 +92,4 @@ elif page == "Team Moments":
 
 # ----------------- FOOTER -----------------
 st.markdown("<hr>", unsafe_allow_html=True)
-st.markdown("<center>✨ Designed with Streamlit | Your Team ✨</center>", unsafe_allow_html=True)
+st.markdown("<center>✨ THE POWER HOUSE CREW ✨</center>", unsafe_allow_html=True)
