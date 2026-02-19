@@ -1,80 +1,110 @@
 import streamlit as st
 from PIL import Image
 import os
+import json
+from datetime import datetime
 
 # ----------------- CONFIG -----------------
-st.set_page_config(page_title="Our Team Website", layout="wide")
+st.set_page_config(page_title="POWER HOUSE | Official Team Website", layout="wide")
+
+# ----------------- PATHS -----------------
+LOGO_PATH = "logo.png"
+IMAGES_DIR = "images"
+MOMENTS_DIR = "moments"
+DATA_FILE = "moments.json"
+
+os.makedirs(IMAGES_DIR, exist_ok=True)
+os.makedirs(MOMENTS_DIR, exist_ok=True)
+
+# ----------------- HEADER -----------------
+col1, col2 = st.columns([1, 5])
+
+with col1:
+    if os.path.exists(LOGO_PATH):
+        st.image(LOGO_PATH, width=120)
+
+with col2:
+    st.markdown("# ⚡ POWER HOUSE ⚡")
+    st.caption("Official Team Website | Mechanical Engineering")
+
+st.markdown("---")
 
 # ----------------- SIDEBAR -----------------
-st.sidebar.title("Team Navigation")
+st.sidebar.title("🚀 Navigation")
 page = st.sidebar.radio("Go to", ["Home", "Team Members", "Team Moments"])
-
-# ----------------- LOGO -----------------
-logo_path = "logo.png"  # Place your team logo image in the same folder
-if os.path.exists(logo_path):
-    st.image(logo_path, width=180)
-
-st.title("🌟 Our Amazing Team 🌟")
 
 # ----------------- TEAM DATA -----------------
 team_details = {
     "Team Name": "POWER HOUSE",
     "Department": "MECHANICAL ENGINEERING",
-    "Institution": "VIDYA ACADEMY OF SCIENCE AND TECNOLOGY",
-    "Instagram Id": "https://www.instagram.com/_power_house08?igsh=Y295bWJxOWV5ajFv"
+    "Institution": "VIDYA ACADEMY OF SCIENCE AND TECHNOLOGY",
+    "Instagram": "https://www.instagram.com/_power_house08"
 }
 
 team_members = [
-    {"name": "Godwin C Baiju", "role": "Captain of House", "image": "godwin.png"},
-    {"name": "Vishnudev M S", "role": "Vice Captain", "image": "vishnu.png"},
-    {"name": "Vinayak", "role": "Designer", "image": "vinayak.png"},
-    {"name": "Goutham K V", "role": "Tester", "image": "goutham.png"},
-    {"name": "Rohith K R", "role": "Tester", "image": "rohith.png"},
-    {"name": "Athul T Santhosh", "role": "Tester", "image": "athul.png"},
-    {"name": "Arun E Satheesh", "role": "Tester", "image": "arun.png"},
-    {"name": "Devarjun", "role": "Tester", "image": "devarjun.png"}
+    {"name": "Godwin C Baiju", "role": "Captain of House", "image": "images/godwin.png"},
+    {"name": "Vishnudev M S", "role": "Vice Captain", "image": "images/vishnu.png"},
+    {"name": "Vinayak", "role": "Designer", "image": "images/vinayak.png"},
+    {"name": "Goutham K V", "role": "Tester", "image": "images/goutham.png"},
+    {"name": "Rohith K R", "role": "Tester", "image": "images/rohith.png"},
+    {"name": "Athul T Santhosh", "role": "Tester", "image": "images/athul.png"},
+    {"name": "Arun E Satheesh", "role": "Tester", "image": "images/arun.png"},
+    {"name": "Devarjun", "role": "Tester", "image": "images/devarjun.png"}
 ]
+
+# ----------------- MOMENT DATA HANDLING -----------------
+def load_moments():
+    if os.path.exists(DATA_FILE):
+        with open(DATA_FILE, "r") as f:
+            return json.load(f)
+    return []
+
+
+def save_moments(data):
+    with open(DATA_FILE, "w") as f:
+        json.dump(data, f, indent=4)
+
+moments_data = load_moments()
 
 # ----------------- HOME PAGE -----------------
 if page == "Home":
-    st.subheader("📌 Team Details")
-    col1, col2 = st.columns(2)
+    st.subheader("📌 Team Overview")
+    cols = st.columns(2)
 
-    for i, (key, value) in enumerate(team_details.items()):
-        if i % 2 == 0:
-            col1.markdown(f"**{key}:** {value}")
+    for i, (k, v) in enumerate(team_details.items()):
+        if k == "Instagram":
+            cols[i % 2].markdown(f"**{k}:** [Visit Profile]({v})")
         else:
-            col2.markdown(f"**{key}:** {value}")
+            cols[i % 2].markdown(f"**{k}:** {v}")
 
     st.markdown("---")
-    st.subheader("👥 Team Members Overview")
+    st.subheader("👥 Team Members")
 
-    cols = st.columns(len(team_members))
-    for col, member in zip(cols, team_members):
-        if os.path.exists(member['image']):
-            img = Image.open(member['image'])
-            col.image(img, width=130)
-        col.markdown(f"**{member['name']}**")
-        col.caption(member['role'])
+    grid = st.columns(4)
+    for i, member in enumerate(team_members):
+        with grid[i % 4]:
+            if os.path.exists(member['image']):
+                st.image(member['image'], width=130)
+            st.markdown(f"**{member['name']}**")
+            st.caption(member['role'])
 
 # ----------------- TEAM MEMBERS PAGE -----------------
 elif page == "Team Members":
     st.subheader("🧑‍🤝‍🧑 Team Profiles")
 
     for member in team_members:
-        col1, col2 = st.columns([1, 3])
+        c1, c2 = st.columns([1, 4])
 
-        with col1:
+        with c1:
             if os.path.exists(member['image']):
-                img = Image.open(member['image'])
-                st.image(img, width=150)
+                st.image(member['image'], width=140)
             else:
                 st.warning("Image not found")
 
-        with col2:
+        with c2:
             st.markdown(f"### {member['name']}")
-            st.markdown(f"**Role:** {member['role']}")
-            st.markdown("**Description:** Passionate team member contributing to project success.")
+            st.markdown(f"**Role:** {member['role']}**")
+            st.write("Dedicated team member with leadership, innovation, and collaborative excellence.")
 
         st.markdown("---")
 
@@ -82,14 +112,38 @@ elif page == "Team Members":
 elif page == "Team Moments":
     st.subheader("📸 Team Moments Gallery")
 
-    uploaded_files = st.file_uploader("Upload Team Moment Photos", type=["png", "jpg", "jpeg"], accept_multiple_files=True)
+    with st.expander("➕ Add New Moment"):
+        photo = st.file_uploader("Upload Photo", type=["png", "jpg", "jpeg"])
+        desc = st.text_area("Moment Description")
 
-    if uploaded_files:
+        if st.button("Save Moment") and photo is not None:
+            filename = datetime.now().strftime("%Y%m%d_%H%M%S") + ".jpg"
+            filepath = os.path.join(MOMENTS_DIR, filename)
+
+            with open(filepath, "wb") as f:
+                f.write(photo.getbuffer())
+
+            entry = {
+                "image": filepath,
+                "description": desc,
+                "time": datetime.now().strftime("%d %b %Y, %I:%M %p")
+            }
+
+            moments_data.append(entry)
+            save_moments(moments_data)
+            st.success("Moment saved successfully!")
+
+    st.markdown("---")
+
+    if moments_data:
         cols = st.columns(3)
-        for i, file in enumerate(uploaded_files):
-            img = Image.open(file)
-            cols[i % 3].image(img, use_container_width=True)
+        for i, m in enumerate(reversed(moments_data)):
+            with cols[i % 3]:
+                if os.path.exists(m['image']):
+                    st.image(m['image'], use_container_width=True)
+                st.caption(m['time'])
+                st.write(m['description'])
 
 # ----------------- FOOTER -----------------
 st.markdown("<hr>", unsafe_allow_html=True)
-st.markdown("<center>✨ THE POWER HOUSE CREW ✨</center>", unsafe_allow_html=True)
+st.markdown("<center>⚡ POWER HOUSE CREW | Built with Streamlit ⚡</center>", unsafe_allow_html=True)
