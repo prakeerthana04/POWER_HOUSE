@@ -56,37 +56,37 @@ team_members = [
     },
     {
         "name": "Vinayak",
-        "role": "Designer",
+        "role": "Team member",
         "image": "images/vinayak.png",
         "desc": "A creative mechanical engineering student with a strong interest in design, visualization, and innovation."
     },
     {
         "name": "Goutham K V",
-        "role": "Tester",
+        "role": "Team member",
         "image": "images/goutham.png",
         "desc": "A detail-oriented mechanical engineering student skilled in analysis, testing, and quality assurance."
     },
     {
         "name": "Rohith K R",
-        "role": "Tester",
+        "role": "Team member ",
         "image": "images/rohith.png",
         "desc": "A motivated mechanical engineering student with a passion for problem-solving and technical excellence."
     },
     {
         "name": "Athul T Santhosh",
-        "role": "Tester",
+        "role": "Team member ",
         "image": "images/athul.png",
         "desc": "An enthusiastic mechanical engineering student committed to learning, teamwork, and innovation."
     },
     {
         "name": "Arun E Satheesh",
-        "role": "Tester",
+        "role": "Team member ",
         "image": "images/arun.png",
         "desc": "A focused mechanical engineering student with strong analytical skills and a hands-on approach."
     },
     {
         "name": "Devarjun",
-        "role": "Tester",
+        "role": "Team member ",
         "image": "images/devarjun.png",
         "desc": "A hardworking mechanical engineering student passionate about engineering concepts and practical applications."
     }
